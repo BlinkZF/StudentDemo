@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>豆瓣音乐</title>
+    <link rel="stylesheet" href="./css/douban.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="tabchajian/dbchajian.css">
+</head>
+
+<body>
+    <div class="global-top-nav">
+        <div class="left-nav">
+            <ul>
+                <li>
+                    <a href="#">豆瓣</a>
+                </li>
+                <li>
+                    <a href="#">读书</a>
+                </li>
+                <li>
+                    <a href="#">电影</a>
+                </li>
+                <li>
+                    <a href="#">音乐</a>
+                </li>
+                <li>
+                    <a href="#">同城</a>
+                </li>
+                <li>
+                    <a href="#">小组</a>
+                </li>
+                <li>
+                    <a href="#">阅读</a>
+                </li>
+                <li>
+                    <a href="#">FM</a>
+                </li>
+                <li>
+                    <a href="#">时间</a>
+                </li>
+                <li>
+                    <a href="#">豆品</a>
+                </li>
+                <li>
+                    <a href="#">更多</a>
+                </li>
+            </ul>
+        </div>
+        <div class="right-nav">
+            <ul>
+                <li>
+                    <a href="#">下载豆瓣客户端</a>
+                </li>
+                <li>
+                    <a href="#">登录</a>
+                </li>
+                <li>
+                    <a href="#">注册</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="global-input">
+        <div class="logo">
+            <img src="img/lg_music_a12_2.png" alt="">
+        </div>
+        <form action="">
+            <input class="text" type="text" placeholder="唱片名、表演者、条码、ISRC">
+            <input class="submit" type="submit" value="搜索">
+        </form>
+        <ul class="search">
+            <!-- <li>
+                <a href="">
+                    <img src="img/advertising-1.jpg" alt="">
+                    <div class="title">
+                        <em>阴天王国</em>
+                        <p>表演者：不优雅先生</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/advertising-1.jpg" alt="">
+                    <div class="title">
+                        <em>爱情风华</em>
+                        <p>表演者：林海</p>
+                    </div>
+                </a>
+            </li> -->
+        </ul>
+    </div>
+    <div class="global-nav-music">
+        <ul>
+            <li class="first">
+                <a href="#">音乐人</a>
+            </li>
+            <li>
+                <a href="#">潮潮豆瓣音乐周</a>
+            </li>
+            <li>
+                <a href="#">金羊毛计划</a>
+            </li>
+            <li>
+                <a href="#">专题</a>
+            </li>
+            <li>
+                <a href="#">排行榜</a>
+            </li>
+            <li>
+                <a href="#">分类浏览</a>
+            </li>
+            <li>
+                <a href="#">乐评</a>
+            </li>
+            <li>
+                <a href="#">豆瓣FM</a>
+            </li>
+            <li>
+                <a href="#">歌单</a>
+            </li>
+            <li>
+                <a href="#">阿比鹿音乐奖</a>
+            </li>
+        </ul>
+    </div>
+    <div id="swiper"></div>
+    <div class="global-right-gdPic">
+        <a href="">
+            <img src="img/advertising-1.jpg" alt="">
+        </a>
+    </div>
+    <div class="global-tab">
+    </div>
+    <div class="global-join">
+        <div class="join-block">
+            <h2>
+                <a href="#">44764</a>
+            </h2>
+            <p>音乐人</p>
+        </div>
+        <div class="join-block">
+            <h2>
+                <a href="#">2661</a>
+            </h2>
+            <p>播客</p>
+        </div>
+        <div class="join-block">
+            <h2>
+                <a href="#">1118</a>
+            </h2>
+            <p>厂牌</p>
+        </div>
+        <div class="button">
+            <a href="#">我要加入</a>
+        </div>
+    </div>
+    <div class="tag-header">
+        <p>热门音乐人分类</p>
+    </div>
+    <div class="tag-more">
+        <a href="#">更多</a>
+    </div>
+    <table>
+        <tbody>
+            <tr>
+                <th>流行</th>
+                <td>轻音乐</td>
+            </tr>
+            <tr>
+                <th>摇滚</th>
+                <td>古典</td>
+            </tr>
+            <tr>
+                <th>电子</th>
+                <td>世界音乐</td>
+            </tr>
+            <tr>
+                <th>民谣</th>
+                <td>说唱</td>
+            </tr>
+            <tr>
+                <th>爵士</th>
+                <td>原声</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="tabchajian/dbindex.js"></script>
+    <script src="./js/douban.js"></script>
+    <script>
+        var content1 = [
+            {
+                img: './img/image/032.png',
+                name: 'P.K.14',
+                classify: '小伤伤',
+                decoration: ['无名', '你和我', '手拿鲜花的女人', '冰的世纪']
+            }, {
+                img: './img/image/031.png',
+                name: 'P.K.14',
+                classify: '小伤伤',
+                decoration: ['无名', '你和我', '手拿鲜花的女人', '冰的世纪']
+            }, {
+                img: './img/image/030.png',
+                name: 'P.K.14',
+                classify: '小伤伤',
+                decoration: ['无名', '你和我', '手拿鲜花的女人', '冰的世纪']
+            }, {
+                img: './img/image/029.png',
+                name: 'P.K.14',
+                classify: '小伤伤',
+                decoration: ['无名', '你和我', '手拿鲜花的女人', '冰的世纪']
+            },
+            {
+                img: './img/image/028.png',
+                name: 'P.K.14',
+                classify: '小伤伤',
+                decoration: ['无名', '你和我', '手拿鲜花的女人', '冰的世纪']
+            }, {
+                img: './img/image/027.png',
+                name: 'P.K.14',
+                classify: '小伤伤',
+                decoration: ['无名', '你和我', '手拿鲜花的女人', '冰的世纪']
+            }, {
+                img: './img/image/026.png',
+                name: 'P.K.14',
+                classify: '小伤伤',
+                decoration: ['无名', '你和我', '手拿鲜花的女人', '冰的世纪']
+            }, {
+                img: './img/image/025.png',
+                name: 'P.K.14',
+                classify: '小颖',
+                decoration: ['无名', '你和我', '手拿鲜花的女人', '冰的世纪']
+            }
+        ];
+        var content2 = [
+            {
+                img: './img/image/024.png',
+                name: '你就不要想起我',
+                classify: '小伤伤',
+                decoration: ['无名', '你和我', '手拿鲜花的女人', '冰的世纪']
+            }, {
+                img: './img/image/023.png',
+                name: '你就不要想起我',
+                classify: '小慧',
+                decoration: ['无名', '你和我', '手拿鲜花的女人', '冰的世纪']
+            }, {
+                img: './img/image/022.png',
+                name: '你就不要想起我',
+                classify: '小伤伤',
+                decoration: ['无名', '你和我', '手拿鲜花的女人', '冰的世纪']
+            }, {
+                img: './img/image/021.png',
+                name: '你就不要想起我',
+                classify: '小伤伤',
+                decoration: ['无名', '你和我', '手拿鲜花的女人', '冰的世纪']
+            },
+            {
+                img: './img/image/020.png',
+                name: '你就不要想起我',
+                classify: '小颖',
+                decoration: ['无名', '你和我', '手拿鲜花的女人', '冰的世纪']
+            }, {
+                img: './img/image/019.png',
+                name: '你就不要想起我',
+                classify: '小七',
+                decoration: ['无名', '你和我', '手拿鲜花的女人', '冰的世纪']
+            }, {
+                img: './img/image/018.png',
+                name: '你就不要想起我',
+                classify: '小伤伤',
+                decoration: ['无名', '你和我', '手拿鲜花的女人', '冰的世纪']
+            }, {
+                img: './img/image/017.png',
+                name: '你就不要想起我',
+                classify: '小颖',
+                decoration: ['无名', '你和我', '手拿鲜花的女人', '冰的世纪']
+            }
+        ];
+        $('#swiper').sliderImg({
+            image: ['img/banner-2723.jpg', 'img/banner-2727.jpg', 'img/banner-2729.jpg', 'img/banner-2732.jpg', 'img/banner-2732.jpg', 'img/banner-2733.jpg', 'img/banner-2734.jpg', 'img/banner-2736.jpg', 'img/banner-2737.jpg', 'img/banner-2738.jpg', 'img/banner-2739.jpg']
+        })
+        function addDom(content, arr, str) {
+            for(var i = 0; i < arr.length; i ++) {
+                str += '<div class="wrap"><div class="con-img">\
+                    <img src="'+ arr[i].img +'" alt=""></div>\
+                    <a href="#">'+ arr[i].name +'</a>\
+                    <p>'+ arr[i].classify +'</p></div>'
+            }
+            content.append(str);
+            return content;
+        }
+        var div1 = addDom($('<div class="content"></div>'), content1, '');
+        var div2 = addDom($('<div class="content"></div>'), content2, '');
+        $('.global-tab').myTab({
+            spanStr: '音乐',
+            tabList: ['本周流行音乐人', '上升最快音乐人'],
+            conStr: [div1, div2]
+        })
+    </script>
+</body>
+</html>

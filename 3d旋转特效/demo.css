@@ -1,0 +1,42 @@
+ *{
+     margin: 0xp;
+     padding: 0px;
+     list-style: none;
+     font-size: 0px;
+     /* 具有inline-block的元素具有文本字体  图片之间有空隙 */
+ }
+ html,body{
+     width: 100%;
+     height: 100%;
+     background:-webkit-radial-gradient(center center,600px 600px,rgba(244,23,234,0.2),rgba(0,0,0,0));
+     /* 径向渐变 */
+     background-color: black;
+     overflow: hidden;
+ }
+ .wrapper{
+     perspective: 800px;
+ }
+ .box{
+     transform-style: preserve-3d;
+     position: relative;
+     width: 120px;
+     height: 180px;
+     margin: 200px auto;
+ }
+ .box img{
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     -webkit-box-reflect: below 20px -webkit-linear-gradient(top,rgba(0,0,0,0)40%,rgba(0,0,0,0.5)100%)    
+     /* 倒影 */
+ }
+
+
+ /* 
+具有inline属性的 具有文本属性  所以有文本大小默认的间距font-size
+
+ 
+ 
+ 
+ 
+ */
