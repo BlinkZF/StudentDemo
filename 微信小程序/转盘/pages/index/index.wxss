@@ -1,0 +1,21 @@
+.pointer{
+    width:400px;
+    height: 400px;
+    margin: 0 auto;
+    background-size: 100% 100%;
+    position: absolute;
+}
+.pointer1{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    margin-top:70px;
+    margin-left:76px;
+    z-index: 5;
+}
+.pointer2{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    z-index: 10;
+}

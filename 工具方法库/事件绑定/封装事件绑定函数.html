@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--封装兼容性的 addEvent(elem, type, handle);方法-->
+<script>
+    //给一个dom对象添加该事件类型的处理函数
+    function addEvent(elem,type,handle) {
+        if(elem.addEventListener){
+            elem.addEventListener(type,handle,false)
+        }
+        else if(elem.attachEvent){
+            elem.attachEvent("on"+type,function () {
+                handle.call(elem);
+            })
+        }else{
+            elem['on'+ type ] = handle;
+        }
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--
+        type区分类型:
+        1.分为两类  原始值(string boolean  number  null  undefined)  引用值(object  function)
+        2.区分引用值
+        参考:https://www.cnblogs.com/blog-index/p/6671909.html
+
+        思路：先把null判断出来
+        -> 判断函数
+        ->  判断是不是object(数组，对象，包装类//通过Object.prototype.toString判断对象的内置类型)
+            判断出来是对象之后  判断一下是什么类型的对象
+        -> 最后判断完引用值之后 剩下的原始值  直接使用typeof
+    -->
+<script>
+    function type(target) {
+        var ret = typeof(target);
+        var template = {//将tostring的结果保存成一个样板
+            "[object Array]":"array",
+            "[object Object]":"object",
+            "[object Number]":"number-object ",
+            "[object Boolean]":"boolean-object ",
+            "[object String]":"string-object "
+        };
+        if(target === null){
+            return 'null';
+        }
+        // if(typeof(target) == "function"){
+        //     return 'function';
+        // }else
+        if(ret == 'object' ){
+            var str = Object.prototype.toString.call(target);
+            return template[str];     //对象[属性名]  求出来的是属性值
+        }else{
+            return ret;
+        }
+    }
+</script>
+</body>
+</html>

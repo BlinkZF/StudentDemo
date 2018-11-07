@@ -1,0 +1,65 @@
+<view class="container">
+<view class='.zf-wrapper'>
+  <!-- 1 -->
+  <navigator url="">
+    <view class='zf-home1'>
+      <view class="zf-one">
+        <image src='../../images/new1.jpg'></image>
+      </view>
+      <view class="zf-two">
+        <view>山语清晖</view>
+        <view>
+          <text>2017</text>
+          <text class='money'>77000元/平</text>
+        </view>
+        <view class='mianji'>
+          <text>三室</text>
+          <text class='pingmi'>99㎡</text>
+          <view>普通住宅</view>
+        </view>
+
+      </view>
+    </view>
+  </navigator>
+  <!-- 2 -->
+  <navigator url="#">
+    <view class='zf-home1'>
+      <view class="zf-one">
+        <image src='../../images/new2.jpg'></image>
+      </view>
+      <view class="zf-two">
+        <view>东方盛世花园二期</view>
+        <view>
+          <text>2017</text>
+          <text class='money'>60000元/平</text>
+        </view>
+        <view class='mianji'>
+          <text>三室</text>
+          <text class='pingmi'>99㎡</text>
+          <view>#普通住宅</view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+  <!-- 3 -->
+  <navigator url="#">
+    <view class='zf-home1'>
+      <view class="zf-one">
+        <image src='../../images/new3.jpg'></image>
+      </view>
+      <view class="zf-two">
+        <view>深城投中心公馆</view>
+        <view>
+          <text>2017</text>
+          <text class='money'>40000元/平</text>
+        </view>
+        <view class='mianji'>
+          <text>三室</text>
+          <text class='pingmi'>90㎡</text>
+          <view>#普通住宅</view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</view>
+</view>

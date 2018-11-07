@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        .wrapper{
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 100px auto 0px;
+            overflow: hidden;
+        }
+        .sliderPage{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 1600px;
+            height: 400px;
+        }
+        .sliderPage li{
+            width: 400px;
+            height: 400px;
+            float: left;
+        }
+
+        .sliderPage li img{
+            width: 100%;
+            height: 100%;
+        }
+        .wrapper .btn{
+            position: absolute;
+            top: 50%;
+            margin: -25px;
+            width: 50px;
+            height: 50px;
+            background-color:#000;
+            color: #FFFFFF;
+            text-align: center;
+            line-height: 50px;
+            opacity: 0.1;
+            cursor: pointer;
+            border-radius: 30%;
+        }
+        .wrapper .btn:hover{
+            opacity: 0.7;
+        }
+        .wrapper .leftbtn{
+            left: 15px;
+        }
+        .wrapper .rightbtn{
+            right: 15px;
+        }
+        .wrapper .sliderIndex {
+            position: absolute;
+            width: 100%;
+            bottom: 15px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .wrapper .sliderIndex span{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #cccccc;
+            margin: 10px;
+        }
+        .wrapper .sliderIndex .active{
+            background-color: #ff3b23;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <ul class="sliderPage">
+        <li><img src="img/pic01.jpg"> </img></li>
+        <li><img src="img/pic02.jpg"> </img></li>
+        <li><img src="img/pic03.jpg"> </img></li>
+        <li><img src="img/pic01.jpg"> </img></li>
+    </ul>
+    <div class="btn leftbtn">&lt</div>
+    <div class="btn rightbtn">&gt</div>
+    <div class="sliderIndex">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+
+<script src="move.js"></script>
+<script>
+    var  timer = null;
+    //拿到移动的图片
+    var  sliderpage = document.getElementsByClassName("sliderPage")[0];
+    //拿到每次移动的距离
+    var moveWidth = sliderpage.children[0].offsetWidth;
+    //记录有多少个li
+    var num = sliderpage.children.length - 1;
+    var leftbtn = document.getElementsByClassName("leftbtn")[0];
+    var rightbtn = document.getElementsByClassName("rightbtn")[0];
+    var lock = true;
+    var index = 0;
+    var spanArray = document.getElementsByClassName("sliderIndex")[0].getElementsByTagName("span");
+    //加锁  因为每次动的时候  手动点击过快  会造成每次移动的距离没有移动完  然后二次移动   这样会造成sliderpage。offsetWidth的偏差
+    //所以  我们应该加锁  按照顺序来 执行完一个 进行下一个
+
+    //注册点击事件
+    leftbtn.onclick = function () {
+        autoMove('right->left');
+    };
+    rightbtn.onclick = function () {
+        autoMove('left->right');
+    };
+    for(var i = 0;i<spanArray.length;i++) {//创建sliderIndex的点击事件
+        (function (myIndex) {
+            spanArray[i].onclick = function () {
+                lock = false;
+                clearTimeout(timer);
+                index = myIndex;
+                startMove(sliderpage,{left: -index * moveWidth},function () {
+                    lock = true;
+                    timer = setTimeout(autoMove,1500);
+                    changeIndex(index);
+                })
+            }
+        })(i);
+    }
+    //direction
+    //默认轮播方向/right  left->right
+    //点击right   rigth -> left
+    function autoMove(direction){
+        if(lock) {
+            lock = false;
+            clearTimeout(timer);
+            //加这些定时器的启动点的时候  是因为 如果停止定时器  则无法从第一张到第三张到的跳转
+            //  停止定时器之后  我们又必须让他重新启动  因为当我们不去点击  css纵向排列照片墙.5秒之后  他需要自己动 所有需要重开定时器
+            if(!direction || direction == 'left->right' ){
+                index++;
+                startMove(sliderpage,{left: sliderpage.offsetLeft - moveWidth},function () {
+                    if(sliderpage.offsetLeft ==  - num * moveWidth)
+                    {
+                        index = 0;
+                        sliderpage.style.left = '0px';
+                    }
+                    timer = setTimeout(autoMove ,1500);
+                    lock = true;
+                    changeIndex(index);
+                    console.log(index);
+                });
+            }
+            else if(direction == 'right->left'){
+                if(sliderpage.offsetLeft == 0)
+                {
+                    sliderpage.style.left = - num * moveWidth+"px";
+                    index = num;
+                }
+                index--;
+                startMove(sliderpage,{left:sliderpage.offsetLeft + moveWidth},function () {
+                    timer = setTimeout(autoMove ,1500);
+                    lock = true;
+                    changeIndex(index);
+                });
+            }
+        }
+    }
+    function changeIndex(_index) {
+        for(var i=0; i<spanArray.length; i++){
+            spanArray[i].className= " ";
+        }
+        spanArray[_index].className = "active";
+    }
+    timer = setTimeout(autoMove,1500);
+</script>
+
+
+
+</body>
+</html>

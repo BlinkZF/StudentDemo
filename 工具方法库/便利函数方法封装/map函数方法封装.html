@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        *{
+            flex-direction: column;
+        }
+
+    </style>
+</head>
+<body>
+<script>
+    //封装map函数
+    arr = [1,2,3,4,5,6,7,8,9];
+    function newArr(arr,fn) {
+        var args = [];
+        for (var i = 0;i<arr.length;i++){
+            (function test(arr,fn) {
+                args.push(fn(arr));
+            })(arr[i],fn)
+        }
+        return args;
+    }
+    result = newArr(arr,function (arr) {
+        return arr[1]*100;
+    });
+    console.log(result);
+</script>
+</body>
+</html>

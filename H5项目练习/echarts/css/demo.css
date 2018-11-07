@@ -1,0 +1,6 @@
+.box1,.box2{
+    width: 600px;
+    height: 600px;
+    border: 1px solid #000;
+    display: inline-block;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .wrapper{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 200px auto;
+            transform-style: preserve-3d;
+            transform: rotateX(10deg);
+            /*perspective: 300px;*/
+            animation: true 5s linear infinite ;
+
+        }
+        .wrapper div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            left: 0;
+            top: 0;
+            text-align: center;
+            line-height: 200px;
+            color: #FFFFFF;
+            font-size: 30px;
+            opacity: 0.5 ;
+        }
+        .item1 {
+            background: red;
+            transform: rotateX(90deg) translateZ(100px);
+
+        }
+        .item2{
+            background: red;
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        .item3 {
+            background: green;
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .item4{
+            background: green;
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .item5 {
+            background: blue;
+            transform: rotateZ(90deg) translateZ(100px);
+        }
+        .item6{
+            background: blue;
+            transform: rotateZ(-90deg) translateZ(-100px);
+        }
+        @keyframes true {
+            0%{
+                transform: rotateX(-10deg) rotate3d(1,1,0,0deg);
+            }
+            20%{
+                transform: rotateX(-10deg) rotate3d(1,1,0,180deg);
+            }
+            40%{
+                transform: rotateX(-10deg) rotate3d(1,0,1,0deg);
+            }
+            60%{
+                transform: rotateX(-10deg) rotate3d(1,0,1,180deg);
+            }
+            80%{
+                transform: rotateX(-10deg) rotate3d(0,1,1,0deg);
+            }
+            100%{
+                transform: rotateX(-10deg) rotate3d(0,1,1,180deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+    <div class="item6">6</div>
+</div>
+</body>
+</html>

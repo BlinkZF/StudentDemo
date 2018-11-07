@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0px;
+    list-style: none;
+}
+.warpper{
+    position: relative;
+    width: 500px;
+    background-color: aquamarine;
+    border: 1px solid #000;
+    margin: 100px auto;
+    border-radius: 10px;
+}
+.warpper .seaech{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 10px auto;
+    height: 80px;
+    /*border: 1px solid #000;*/
+    margin-top: 20px;
+}
+.warpper .seaech input{
+    display: inline-block;
+    border-radius: 10px;
+    width: 50%;
+    height: 30px;
+    outline: none;
+    margin: 15px 0 0 15px;
+    /*去掉点击后输入框的颜色*/
+    padding: 5px;
+
+}
+.warpper .seaech ul{
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+.warpper .seaech ul li{
+    float: left;
+    margin-left: 5px;
+    height: 30px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: 3px solid #f40;
+    border-radius: 10px;
+    line-height: 30px;
+    text-align: center;
+    color: #ff4400;
+    margin-top: -13px;
+    cursor: pointer;
+}
+.warpper .seaech ul li:hover{
+    border: 3px solid #ccc;
+}
+.warpper .seaech ul .active{
+    background-color: #ff4400;
+    color: #ccc;
+}
+.warpper .userList{
+    width:100%;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+.warpper .userList li{
+    width: 90%;
+    height: 60px;
+    margin: 0 auto;
+    background-color: #ff3b23;
+    border: 1px solid #000;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+.warpper .userList li img
+{
+    width: 60px;
+    height: 60px;
+}
+.warpper .userList li span{
+    display: inline-block;
+    /*当使用inline-block的时候  vertical-align默认的对齐是底边  */
+    width: 150px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    vertical-align: top;
+}
+/*/总结：尴尬  不知道为什么  我将最外面的边框删除之后  在 userList 中写的  margin-bottom30px就不起作用了  所以难道是说需要一个边界来给他做
+  参考值？
+  */

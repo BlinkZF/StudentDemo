@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    Father.prototype.lastName = 'zhang';//公有原型
+    function Father() {
+    }
+    function Son() {
+    }
+    Son.prototype.sex = "male";
+    function inherit(Target,Origin) {//目标  源点
+        function F() {
+        }
+
+        F.prototype = Origin.prototype;
+        Target.prototype = new F();//倒过来  就不对了
+        Target.constructor = Target;//将Son的constructor归位
+        Target.prototype.uber = Origin.prototype;//找到Tatget继承自谁
+    }//超类  超级父级   继承自谁
+    inherit(Son,Father);
+    var son = new Son();
+    var father = new Father();
+    Son.prototype.sex = "male";
+</script>
+</body>
+</html>

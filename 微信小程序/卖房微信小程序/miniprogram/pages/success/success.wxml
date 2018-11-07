@@ -1,0 +1,4 @@
+<!--miniprogram/pages/success/success.wxml-->
+<view class="container">
+  <view>成功~~~</view>
+</view>

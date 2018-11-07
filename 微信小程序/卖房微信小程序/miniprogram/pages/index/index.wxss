@@ -1,0 +1,52 @@
+
+
+.zf-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.zf-home1 {
+  display: flex;
+  width: 100%;
+  height: 110px;
+  justify-content: center;
+  align-items: center;
+}
+
+.zf-one {
+  display: flex;
+  width: 46%;
+  height: 90%;
+}
+
+.zf-one image {
+  width: 160px;
+  height: 100px;
+}
+
+.zf-two {
+  width: 50%;
+  display: block;
+  font-size: 14px;
+}
+
+.zf-two view {
+  margin: 5px 0;
+}
+
+.zf-two .money {
+  color: red;
+  float: right;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.zf-two .mianji {
+  color: #aaa;
+}
+
+.zf-two .pingmi {
+  margin: 30px;
+}
+
+

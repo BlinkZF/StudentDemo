@@ -1,0 +1,54 @@
+<!--miniprogram/pages/agent/agent.wxml-->
+<view class="container">
+  <navigator url='homePage.wxml'>
+    <view class='zf-home1'>
+      <view class="zf-one">
+        <image src='../../images/agent1.JPG'></image>
+      </view>
+      <view class="zf-two">
+        <view class='agentsome'>
+          <view>张凡</view>
+          <view>靠谱房源马上找</view>
+        </view>
+      </view>
+      <view class='img'>
+        <!-- <image src='../../images/jiahao.png'></image> -->
+        <navigator url="tel:18511178920"><text>电话联系</text></navigator>
+        </view>
+    </view>
+  </navigator>
+    <navigator url="">
+    <view class='zf-home1'>
+      <view class="zf-one">
+        <image src='../../images/agent1.JPG'></image>
+      </view>
+      <view class="zf-two">
+        <view class='agentsome'>
+          <view>张凡</view>
+          <view>靠谱房源马上找</view>
+        </view>
+      </view>
+      <view class='img'>
+        <!-- <image src='../../images/jiahao.png'></image> -->
+        <navigator url="tel:18511178920"><text>电话联系</text></navigator>
+        </view>
+    </view>
+  </navigator>
+    <navigator url="">
+    <view class='zf-home1'>
+      <view class="zf-one">
+        <image src='../../images/agent1.JPG'></image>
+      </view>
+      <view class="zf-two">
+        <view class='agentsome'>
+          <view>张凡</view>
+          <view>靠谱房源马上找</view>
+        </view>
+      </view>
+      <view class='img'>
+        <!-- <image src='../../images/jiahao.png'></image> -->
+        <navigator url="tel:18511178920"><text>电话联系</text></navigator>
+        </view>
+    </view>
+  </navigator>
+</view>

@@ -1,0 +1,34 @@
+/* miniprogram/pages/homePage/homePage.wxss */
+page{
+  background-color: rgb(212, 211, 211);
+}
+.top{
+  width: 100%;
+  height: 300px;
+  background-color: rgb(8, 172, 117);
+}
+.top-one{
+  display: flex;
+  justify-content: center;
+}
+image{
+  
+  margin-top: 30px;
+  width: 100px;
+  height: 140px;
+  border-radius: 50%;
+}
+.top-two{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.top-three{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.conter{
+  width: 100%;
+  height: 300px;
+}

@@ -1,0 +1,21 @@
+<!--miniprogram/pages/rent/rent.wxml-->
+  <navigator url="../123/123">
+    <view class='zf-home1'>
+      <view class="zf-one">
+        <image src='../../images/new1.jpg'></image>
+      </view>
+      <view class="zf-two">
+        <view>壹号公馆</view>
+        <view>
+          <text>上海</text>
+          <text class='money'>2150元/月</text>
+        </view>
+        <view class='mianji'>
+          <text>一室</text>
+          <text class='pingmi'>20㎡</text>
+          <view>出租房</view>
+        </view>
+
+      </view>
+    </view>
+  </navigator>

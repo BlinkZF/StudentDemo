@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //异步加载的方法的一种
+    //当需要异步加载script的时候使用   按需加载
+    function loadScript(url,callback) {
+        var script = document.createElement("script");
+        if(script.readyState){
+            script.onreadystatechange = function(){
+                if(script.readyState == 'loaded' || script.readyState =='complete');{
+                   callback();
+                }
+            }
+        }else{
+            script.onload = function () {
+                   callback();
+            }
+        }
+        script.src = url;
+        document.head.appendChild(script);
+    }
+    loadScript("demo.js",function () { //当系统在读这句语句的时候还没完   就开始解析test了 但是系统又不知道这是什么  因为没有定义  所以直接写test不行
+        //  所以这里需要改变一下使用一个函数引用   使用一个匿名函数  将函数体成test();
+                                    //函数引用读的时候不会识别里面的代码   只有在在执行的时候才会读里面的代码   所以解析完成之后执行的时候才会执行里面的test()
+        test();
+    })
+//  先把事件绑定上然后在加载  防止加载完成之后还没有绑定事件
+</script>
+</body>
+</html>
+<!--  还有一种解决办法是evel   (不建议用)  -->
+<!--还有一种解决办法是将js写成json对象的形式
+
+   var tools = {
+            test:function(){
+            console.log(a);
+            }
+            demo:function(){}
+   }
+
+在里面可以将callback换成  tools[callback]
+然后把传入参数改为  loadScript('demo.js数组常用方法','test')
+
+
+
+
+
+
+
+
+
+
+
+-->

@@ -1,0 +1,61 @@
+<!--miniprogram/pages/rentOut/rentOut.wxml-->
+<view class='wrapper'>
+  <view class='base'>基本信息</view>
+  <view class="itemView  area ">
+    <input class="input" name="area" placeholder="所在区域" bindinput="userNameInput" />
+  </view>
+  <view class="itemView s2">
+    <input class="input" name="userName" placeholder="出售信息" bindinput="userNameInput" />
+  </view>
+  <view class='sell'>出租信息</view>
+  <view class="itemView houseName">
+    <input class="input" name="houseName" placeholder="房屋名称" bindinput="userNameInput" />
+  </view>
+  <view class="itemView price">
+    <input class="input" name="price" placeholder="售价(单位：万元)" bindinput="userNameInput" />
+  </view>
+  <view class="itemView s5">
+    <input class="input" name="userName" placeholder="户型" bindinput="userNameInput" />
+  </view>
+  <view class="itemView s6">
+    <input class="input" name="userName" placeholder="年代" bindinput="userNameInput" />
+  </view>
+  <view class="itemView s7">
+    <input class="input" name="userName" placeholder="面积(单位：㎡)" bindinput="userNameInput" />
+  </view>
+  <view class="itemView s8">
+    <input class="input" name="userName" placeholder="楼层" bindinput="userNameInput" />
+  </view>
+  <view class="itemView s9">
+    <input class="input" name="userName" placeholder="手机号" bindinput="userNameInput" />
+  </view>
+  <view class="itemView s10">
+    <input class="input" name="userName" placeholder="标签(##)" bindinput="userNameInput" />
+  </view>
+  <view class='sell'>房屋描述</view>
+  <view class="itemView s11">
+    <textarea class="detailText" placeholder="请描述您的房屋信息" bindblur="bindTextAreaBlur" value="{{details}}">
+    </textarea>
+  </view>
+  <!-- <view class='sell'>房屋封面</view> -->
+  <!-- <view class="itemView s11">
+    <view class='img'>
+      <navigator url=''>
+        <image src='../../images/jiahao.png'></image>
+      </navigator>
+    </view>
+  </view> -->
+  <view class="uploader">
+    <view class="uploader-text" bindtap="doUpload">
+      <text>上传房屋图片</text>
+    </view>
+    <view class="uploader-container" wx:if="{{imgUrl}}">
+      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
+  </view>
+  <view class='submit'>
+    <navigator url='success'>
+      <button>提交</button>
+    </navigator>
+  </view>
+</view>

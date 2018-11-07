@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <!--eval('1+2+3')将括号中的字符当成数字来计算   但是会改变(破坏)作用域 -->
+    <script>
+        // call函数封装
+        value = 'window';
+        function show(name,age){
+            console.log(this.value);
+            return{
+                name:name,
+                age:age
+            }
+        }
+        var obj = {
+            value:'obj'
+        };
+        Function.prototype.newCall=function () {
+            var ctx = arguments[0] || window;
+            ctx.fn = this;
+            var arr = [];
+            for(var i=1;i<arguments.length;i++){
+                arr.push('arguments[' + i +']');
+            }
+            var result = eval('ctx.fn('+arr.join(',')+')');
+            delete ctx.fn;
+            return result;
+        };
+         var res = show.newCall(obj,'zhangfan',10);
+
+
+
+
+         //apply函数封装
+         Function.prototype.newApply = function(ctx,arr){
+             var ctx = ctx || window;
+             ctx.fn = this;
+             if(!arr){
+                 var result = ctx.fn();
+                 delete ctx.fn;
+                 return result;
+             }else{
+                 var args = [];
+                 for(var i=0;i<arr.length;i++){
+                     args.push('arr['+i+']');
+                 }
+                 var result = eval('ctx.fn('+args.join(',')+')');
+                 delete ctx.fn;
+                 return result;
+             }
+         };
+         var res1 = show.newApply(obj,['zhangfan',20]);
+
+
+    </script>
+</body>
+</html>

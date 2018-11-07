@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str = 'asdafasfasgagahadjafdjwrtjtks';
+    function test(str) {
+        var obj = {};//创建一个对象 利用对象属性的唯一性去重  将去重后的保存在对象中  属性值为1
+        for (var i = 0; i < str.length; i++) {
+            var count = 1;
+            obj[str[i]] = count;
+        }
+        arr = Object.keys(obj);//利用原生js对象取出对象中的属性名  保存在数组arr中
+        var arr1 = [];//创建一个数组  用来存放每一个字符的数量  和arr中的前后位置一一对应
+        for (i in arr) {
+            var num = 0;
+            for (var j = 0; j < str.length; j++) {
+                if (str[j] == arr[i]) {
+                    num++;
+                }
+            }
+            arr1.push(num)
+        }
+        console.log(arr1);
+        var num1 = 0;
+        for (i in arr1) {//找出存放字符数量中第一个为1的下标
+            if (arr1[i] != 1) {
+                num1 += 1;
+            } else {
+                break
+            }
+        }
+        console.log(arr[num1])//去找出这个字母打印出来
+    }
+    test(str);
+
+
+
+</script>
+</body>
+</html>

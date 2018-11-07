@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function cancelHandler(event) {
+        if(event.preventDefault){
+            event.preventDefault();
+        }else{
+            event.returnValue = fals;
+        }
+    }
+</script>
+</body>
+</html>

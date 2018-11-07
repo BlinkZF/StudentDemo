@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #myCanvas{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="300"></canvas>
+<script>
+    var myCanvas = document.getElementById('myCanvas');
+    var ctx = myCanvas.getContext('2d');
+    var w = myCanvas.width;
+    var h = myCanvas.height;
+    var lastX,lastY;
+    function init() {
+        ctx.fillStyle = '#ccc';
+        ctx.fillRect(0,0,300,300);
+        var r =  Math.random();
+        var img = new Image();
+        if(r < 0.5){
+            img.src = './img/1.jpg';
+        }else{
+            img.src = './img/3.jpg';
+        }
+        img.onload = function () {
+            myCanvas.style.backgroundImage = 'url('+img.src+')';
+            ctx.globalCompositeOperation = 'destination-out';
+            document.addEventListener('mousedown',downFun,false)
+        }
+    }
+    init();
+
+    function downFun(e) {
+        var lastX = e.clientX;
+        var lastY = e.clientY;
+        myCanvas.addEventListener('mousemove',moveFun,false);
+        document.addEventListener('mouseup',upFun,false)
+    }
+    function moveFun(e) {
+        var nowX = e.clientX;
+        var nowY = e.clientY;
+        ctx.beginPath();
+        ctx.fillStyle = 'red';
+        ctx.lineWidth = 40;
+        ctx.moveTo(lastX,lastY);
+        ctx.lineTo(nowX,nowY);
+        ctx.stroke();
+        ctx.arc(nowX,nowY,20,0,Math.PI*2,0);
+        ctx.fill();
+        lastX = nowX;
+        lastY = nowY;
+    }
+    function upFun() {
+        myCanvas.removeEventListener('mousemove',moveFun,false);
+        document.removeEventListener('mouseup',upFun,false);
+        clearAll();
+    }
+    function clearAll() {
+        var d = ctx.getImageData(0,0,w,h);
+        len = d.data.length;
+        var c = 0;
+        for(var i = 0;i < len; i++){
+            if(d.data[i] == 0){
+                c++;
+            }
+        }
+        if(c > w * h * 0.7){
+            ctx.clearRect(0,0,w,h);
+        }
+    }
+
+</script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //getStyle  获取css的属性
+    function getStyle(ele,prop) {
+        if(window.getComputedStyle){
+            return window.getComputedStyle(ele,null)[prop];
+        }else{
+            return ele.currentStyle[prop];
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!--miniprogram/pages/homePage/homePage.wxml-->
+<view class="container">
+  <view class='top'>
+    <view class='top-one'>
+      <image src='../../images/agent1.JPG'></image>
+    </view>
+    <view class='top-two'>
+      <text>张凡</text>
+    </view>
+    <view class='top-three'>
+      <text>18888888888</text>
+    </view>
+    <view class='top-three'>
+      <text>链家房地产销售连续十年的销售冠军</text>
+    </view>
+  </view>
+  <view class='container'>
+    <view class='conter'>
+      <view class='conter-one'>
+      </view>
+    </view>
+  </view>
+</view>

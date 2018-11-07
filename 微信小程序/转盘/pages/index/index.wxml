@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="background">
+<image src="../img/beijin.png" class="pointer" />
+<image animation = "{{rotateData}}" src="../img/zhuanpan.png" class="pointer1" />
+<image src="../img/zhizhen.png" bindtap="start" class="pointer2" />
+</view>
